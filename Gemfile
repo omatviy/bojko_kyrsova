@@ -17,6 +17,7 @@ group :assets do
 end
 
 gem 'annotate'
+gem 'fastercsv'
 gem 'jquery-rails'
 gem "therubyracer"
 
