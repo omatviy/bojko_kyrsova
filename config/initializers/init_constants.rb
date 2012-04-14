@@ -1,0 +1,1 @@
+SEED_DIR = "#{Rails.root}/db/data"
