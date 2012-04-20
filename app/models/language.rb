@@ -41,3 +41,14 @@ class Language < ActiveRecord::Base
   end
 
 end
+# == Schema Information
+#
+# Table name: languages
+#
+#  id         :integer         not null, primary key
+#  iana_code  :string(10)
+#  name       :string(255)     not null
+#  created_at :datetime
+#  updated_at :datetime
+#
+

@@ -16,7 +16,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'annotate'
+gem 'annotate', '~> 2.4.1.beta' 
 #gem 'fastercsv'
 gem 'jquery-rails'
 gem "therubyracer"
