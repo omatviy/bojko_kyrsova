@@ -12,4 +12,14 @@ Language.load_csv_data('languages.csv',false,';')
 puts "Loading geography"
 LoadSql.load("geography.sql")
 
+puts "Loading operator, mcc and mnc data"
+#Operator.load_csv_data('mnc.csv',false,';')
+#MobileCountryCode.load_csv_data('mcc.csv',false,';')
+#MobileNetworkCode.load_csv_data('mnc.csv',false,';')
+LoadSql.load("operators.sql")
+#LoadSql.load("mobile_country_codes.sql")
+#LoadSql.load("mobile_network_codes.sql")
+
+
+puts "End of rake db:seed"
 
