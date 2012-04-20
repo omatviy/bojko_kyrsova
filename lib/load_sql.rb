@@ -1,13 +1,13 @@
 class LoadSql
 
-  def self.load(filename, env=RAILS_ENV, path_to_file = nil)
+  def self.load(filename, env=Rails.env, path_to_file = nil)
     if path_to_file.nil?
        filepath = "#{Rails.root}/db/data/#{filename}"
     else
        filepath = "#{path_to_file}/#{filename}"
     end 
     raise "Filename #{filepath} does not exist" unless File.exists?(filepath)
-    config = Rails::Configuration.new.database_configuration[env]
+    config = Rails.configuration.database_configuration[Rails.env]
 
     case config['adapter']
     when 'mysql'
