@@ -8,3 +8,8 @@
 
 puts "Loading language data"
 Language.load_csv_data('languages.csv',false,';')
+
+puts "Loading geography"
+LoadSql.load("geography.sql")
+
+
