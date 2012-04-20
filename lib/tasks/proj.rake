@@ -7,7 +7,8 @@ namespace :proj do
   task :clean_user_data => []
 
   desc "reset db, apply migrations"
-  task :resetdb => ['db:drop', :clean_user_data, 'db:create', 'db:migrate', :modify_annotate, 'db:seed']
+  #task :resetdb => ['db:drop', :clean_user_data, 'db:create', 'db:migrate', :modify_annotate, 'db:seed']
+  task :resetdb => ['db:drop', 'db:create', 'db:migrate', 'db:seed']
 
   desc "add test data"
   task :add_test_data => ['db:addpeople']
@@ -24,25 +25,6 @@ namespace :proj do
   end
   
   
-  desc "remove the image files"
-  task :clear_images do
-    IMAGES_PATH = "public/rsc-uploads/images"
-    directory = IMAGES_PATH
-    puts "Deleting files and directories in #{directory}"
-
-    if File.exists?(directory) && File.directory?(directory)
-      file_directory_list = Dir.entries(directory)
-      file_directory_list.delete(".")
-      file_directory_list.delete("..")
-      file_directory_list.each do |file|
-        path_to_file = "#{directory}/#{file}"
-        if File.directory?(path_to_file)
-          FileUtils.remove_dir(path_to_file)
-          puts "Directory #{path_to_file} was deleted"
-        end
-      end
-    end
-  end
 
   
 end

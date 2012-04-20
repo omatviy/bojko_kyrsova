@@ -3,13 +3,13 @@ class Language < ActiveRecord::Base
   validates_uniqueness_of :name, :allow_nil => false, :allow_blank => false
 
   def self.load_csv_data(fname, validate_only = false, separator = ";", first_row_header = true, truncate = true)
-    fpath = File.join(RAILS_ROOT, SEED_DIR, fname)
+    fpath = File.join(Rails.root, SEED_DIR, fname)
     unless File.exists?(fpath)
       puts "File #{fpath} doesn't exist"
       return
     end
     #truncate_table if truncate
-    data = FasterCSV.read(fpath, {:col_sep => separator, :headers => first_row_header})
+    data = CSV.read(fpath, {:col_sep => separator, :headers => first_row_header})
     data.each do |row|
       iana_code = row[0]
       name = row[1]
