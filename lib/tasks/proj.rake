@@ -8,7 +8,7 @@ namespace :proj do
 
   desc "reset db, apply migrations"
   #task :resetdb => ['db:drop', :clean_user_data, 'db:create', 'db:migrate', :modify_annotate, 'db:seed']
-  task :resetdb => ['db:drop', 'db:create', 'db:migrate', 'db:seed']
+  task :resetdb => ['db:drop', 'db:create', 'db:migrate', :modify_annotate, 'db:seed']
 
   desc "add test data"
   task :add_test_data => ['db:addpeople']

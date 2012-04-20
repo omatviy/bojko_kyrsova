@@ -30,5 +30,5 @@ INSERT INTO "nations" ("region_id", "display_order", "name", "tel_code") VALUES 
 INSERT INTO "nations" ("region_id", "display_order", "name", "tel_code") VALUES (0, 2, 'Tajikistan', NULL);
 INSERT INTO "nations" ("region_id", "display_order", "name", "tel_code") VALUES (0, 2, 'Tanzania', NULL);
 INSERT INTO "nations" ("region_id", "display_order", "name", "tel_code") VALUES (0, 2, 'Thailand', NULL);
-INSERT INTO "nations" ("region_id", "display_order", "name", "tel_code") VALUES (0, 2, 'Ukraine', NULL);
+INSERT INTO "nations" ("region_id", "display_order", "name", "tel_code") VALUES (0, 2, 'Ukraine', '380');
 
