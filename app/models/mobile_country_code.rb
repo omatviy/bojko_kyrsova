@@ -1,6 +1,6 @@
 class MobileCountryCode < ActiveRecord::Base
   belongs_to :nation
-#  has_many   :mncs, :class_name => MobileNetworkCode.class_name
+  has_many   :mncs, :class_name => MobileNetworkCode.model_name
 
   validates_presence_of :nation_id, :message => "nation must be present"
   validates_presence_of :mcc, :message => "mcc must be present"
@@ -30,9 +30,8 @@ class MobileCountryCode < ActiveRecord::Base
   end
 
 
-  def self.generate_random_ukr_mcc
+  def self.ukr_mccs
     @@ukr_mccs ||= Nation.ukr.mccs.map(&:mcc)
-    @@ukr_mccs[rand(@@ukr_mccs.count)].to_s
   end
 
 end
