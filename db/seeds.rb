@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+puts "Start of rake db:seed"
 puts "Loading language data"
 Language.load_csv_data('languages.csv',false,';')
 
