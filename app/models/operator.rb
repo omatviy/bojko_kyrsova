@@ -1,5 +1,5 @@
 class Operator < ActiveRecord::Base
-#  has_many :mobile_network_codes
+  has_many :mobile_network_codes
   validates_presence_of :name
   validates_uniqueness_of :name
   validates_length_of :name, :in => 1..80, :message => "length of name must be 1..80"
@@ -14,3 +14,13 @@ class Operator < ActiveRecord::Base
 
 
 end
+# == Schema Information
+#
+# Table name: operators
+#
+#  id         :integer         not null, primary key
+#  name       :string(255)     not null
+#  created_at :datetime
+#  updated_at :datetime
+#
+

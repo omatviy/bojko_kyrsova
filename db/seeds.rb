@@ -18,6 +18,7 @@ puts "Loading operator, mcc and mnc data"
 #MobileNetworkCode.load_csv_data('mnc.csv',false,';')
 LoadSql.load("operators.sql")
 #LoadSql.load("mobile_country_codes.sql")
+MobileCountryCode.create_with_country("Ukraine", {:mcc => '255'})
 #LoadSql.load("mobile_network_codes.sql")
 
 
